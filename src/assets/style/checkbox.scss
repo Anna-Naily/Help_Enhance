@@ -1,0 +1,56 @@
+$toggle-background-color-on: #4799b1;
+$toggle-background-color-off: darkgray;
+$toggle-control-color: white;
+$toggle-width: 40px;
+$toggle-height: 20px;
+$toggle-gutter: 1px;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+.toggle-control {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  .checkbox-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkbox-input:checked ~ .control {
+    background-color: $toggle-background-color-on;
+    
+    &:after {
+      left: $toggle-width - $toggle-control-size - $toggle-gutter;
+    }
+  }
+
+  .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: $toggle-background-color-off;
+    transition: background-color 0.15s ease-in;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 0.5px;
+      width: 18px;
+      height: 18px;
+      border-radius: 25px;
+      background: $toggle-control-color;
+      transition: left  0.15s ease-in;
+    }
+  }
+}
+
+/* Center the control */
+
