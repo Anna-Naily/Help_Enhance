@@ -443,6 +443,7 @@ export default {
               outputStatisticObj.result = true;
               this.addData('Усиление бижутерии на +3 прошло успешно');
             } else {
+              this.soundFailed.play();
               this.failEnhanceTo3();
 
               this.addData('Усиление бижутерии на +3 не удалось');
