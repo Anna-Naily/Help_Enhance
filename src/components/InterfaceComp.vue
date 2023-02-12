@@ -407,6 +407,7 @@ export default {
               this.failEnhanceTo1();
               this.addData('Усиление бижутерии на +1 не удалось');
             }
+            this.countStatisticJewelry(outputStatisticObj);
           } else this.outRes();
           break;
         case 2:
@@ -427,6 +428,7 @@ export default {
               this.failEnhanceTo2();
               this.addData('Усиление бижутерии на +2 не удалось');
             }
+            this.countStatisticJewelry(outputStatisticObj);
           } else this.outRes();
           break;
         case 3:
@@ -448,6 +450,7 @@ export default {
 
               this.addData('Усиление бижутерии на +3 не удалось');
             }
+            this.countStatisticJewelry(outputStatisticObj);
           } else this.outRes();
           break;
         case 4:
@@ -469,6 +472,7 @@ export default {
 
               this.addData('Усиление бижутерии на +4 не удалось');
             }
+            this.countStatisticJewelry(outputStatisticObj);
           } else this.outRes();
           break;
         case 5:
@@ -490,12 +494,12 @@ export default {
 
               this.addData('Усиление бижутерии на +5 не удалось');
             }
+            this.countStatisticJewelry(outputStatisticObj);
           } else this.outRes();
           break;
         default:
           break;
       }
-      this.countStatisticJewelry(outputStatisticObj);
     },
     toEnhanceArmor() {
       let gotChance = Math.random();
@@ -523,6 +527,7 @@ export default {
               this.failEnhanceTo1();
               this.addData('Усиление брони на +16 не удалось');
             }
+            this.countStatisticArmor(outputStatisticObj);
           } else this.outRes();
           break;
         case 2:
@@ -541,6 +546,7 @@ export default {
               this.failEnhanceTo2();
               this.addData('Усиление брони на +17 не удалось');
             }
+            this.countStatisticArmor(outputStatisticObj);
           } else this.outRes();
           break;
         case 3:
@@ -561,6 +567,7 @@ export default {
               this.failEnhanceTo3();
               this.addData('Усиление брони на +18 не удалось');
             }
+            this.countStatisticArmor(outputStatisticObj);
           } else this.outRes();
           break;
         case 4:
@@ -581,6 +588,7 @@ export default {
               this.failEnhanceTo4();
               this.addData('Усиление брони на +19 не удалось');
             }
+            this.countStatisticArmor(outputStatisticObj);
           } else this.outRes();
           break;
         case 5:
@@ -601,12 +609,12 @@ export default {
               this.failEnhanceTo5();
               this.addData('Усиление брони на +20 не удалось');
             }
+            this.countStatisticArmor(outputStatisticObj);
           } else this.outRes();
           break;
         default:
           break;
       }
-      this.countStatisticArmor(outputStatisticObj);
     },
     toEnhanceBlackstar() {
       let gotChance = Math.random();
@@ -636,6 +644,7 @@ export default {
               this.failEnhanceTo1();
               this.addData('Усиление оружия черной звезды на +16 не удалось');
             }
+            this.countStatisticBlackstar(outputStatisticObj);
           } else this.outRes();
           break;
         case 2:
@@ -656,6 +665,7 @@ export default {
               this.failEnhanceTo2();
               this.addData('Усиление оружия черной звезды на +17 не удалось');
             }
+            this.countStatisticBlackstar(outputStatisticObj);
           } else this.outRes();
           break;
         case 3:
@@ -678,6 +688,7 @@ export default {
               this.failEnhanceTo3();
               this.addData('Усиление оружия черной звезды на +18 не удалось');
             }
+            this.countStatisticBlackstar(outputStatisticObj);
           } else this.outRes();
           break;
         case 4:
@@ -700,6 +711,7 @@ export default {
               this.failEnhanceTo4();
               this.addData('Усиление оружия черной звезды на +19 не удалось');
             }
+            this.countStatisticBlackstar(outputStatisticObj);
           } else this.outRes();
           break;
         case 5:
@@ -722,12 +734,12 @@ export default {
               this.failEnhanceTo5();
               this.addData('Усиление оружия черной звезды на +20 не удалось');
             }
+            this.countStatisticBlackstar(outputStatisticObj);
           } else this.outRes();
           break;
         default:
           break;
       }
-      this.countStatisticBlackstar(outputStatisticObj);
     },
     toEnhanceArmorGod() {
       let gotChance = Math.random();
@@ -755,6 +767,7 @@ export default {
               this.failEnhanceTo1();
               this.addData('Усиление брони Мертвого Бога на I не удалось');
             }
+            this.countStatisticArmorGod(outputStatisticObj);
           } else this.outRes();
           break;
         case 2:
@@ -775,6 +788,7 @@ export default {
               this.failEnhanceTo2();
               this.addData('Усиление брони Мертвого Бога на II не удалось');
             }
+            this.countStatisticArmorGod(outputStatisticObj);
           } else this.outRes();
           break;
         case 3:
@@ -797,6 +811,7 @@ export default {
               this.failEnhanceTo3();
               this.addData('Усиление брони Мертвого Бога на III не удалось');
             }
+            this.countStatisticArmorGod(outputStatisticObj);
           } else this.outRes();
           break;
         case 4:
@@ -817,6 +832,7 @@ export default {
               this.failEnhanceTo4();
               this.addData('Усиление брони Мертвого Бога на IV не удалось');
             }
+            this.countStatisticArmorGod(outputStatisticObj);
           } else this.outRes();
           break;
         case 5:
@@ -837,12 +853,12 @@ export default {
               this.failEnhanceTo5();
               this.addData('Усиление брони Мертвого Бога на V не удалось');
             }
+            this.countStatisticArmorGod(outputStatisticObj);
           } else this.outRes();
           break;
         default:
           break;
       }
-      this.countStatisticArmorGod(outputStatisticObj);
     },
     toEnhanceManos() {
       let gotChance = Math.random();
@@ -868,6 +884,7 @@ export default {
               this.failEnhanceTo1();
               this.addData('Усиление бижутерии Маноса на +1 не удалось');
             }
+            this.countStatisticManos(outputStatisticObj);
           } else this.outRes();
           break;
         case 2:
@@ -886,6 +903,7 @@ export default {
               this.failEnhanceTo2();
               this.addData('Усиление бижутерии Маноса на +2 не удалось');
             }
+            this.countStatisticManos(outputStatisticObj);
           } else this.outRes();
           break;
         case 3:
@@ -904,6 +922,7 @@ export default {
               this.failEnhanceTo3();
               this.addData('Усиление бижутерии Маноса на +3 не удалось');
             }
+            this.countStatisticManos(outputStatisticObj);
           } else this.outRes();
           break;
         case 4:
@@ -922,6 +941,7 @@ export default {
               this.failEnhanceTo4();
               this.addData('Усиление бижутерии Маноса на +4 не удалось');
             }
+            this.countStatisticManos(outputStatisticObj);
           } else this.outRes();
           break;
         case 5:
@@ -940,12 +960,12 @@ export default {
               this.failEnhanceTo5();
               this.addData('Усиление бижутерии Маноса на +5 не удалось');
             }
+            this.countStatisticManos(outputStatisticObj);
           } else this.outRes();
           break;
         default:
           break;
       }
-      this.countStatisticManos(outputStatisticObj);
     },
     setInputFailstack(e) {
       this.setInputGeneralFailstack(Number(e.target.value));
