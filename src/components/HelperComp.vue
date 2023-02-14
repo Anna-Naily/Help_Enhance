@@ -2,7 +2,7 @@
   <div class="help-wrapper">
     <transition name="fade">
       <div class="tooltip choice-bar left" v-show="getStage==1">
-        <p class="tooltip-text">Выберите уровень и тип усиляемой группы предметов</p>
+        <p class="tooltip-text">Выберите уровень и тип усиливаемой группы предметов</p>
         <button class="tooltip-button" @click="nextStage">Далее</button>
       </div>
     </transition>

@@ -7,8 +7,11 @@
       }
     
       .modal-content {
-        top: 20% !important;
+        top: 60px !important;
     } 
+    .modal-bg {
+      height: 3010px !important;
+    }
       .inventory-bar {
         left: 1180px !important;
       }
@@ -42,8 +45,12 @@
             margin: 95px 0 68px -170px !important; 
         }   
         .modal-content {
-            top: 12% !important; 
+            top: 80px !important; 
         }
+        .modal-bg {
+          height: 3010px !important;
+        }
+
         .choice-bar {
             left: 300px !important;
           }
@@ -121,7 +128,10 @@ margin-bottom: 25px !important;
         font-size: 15px !important;
     }
     .modal-content {
-        top: 9% !important; 
+        top: 80px !important; 
+    }
+    .modal-bg {
+      height: 3300px !important;
     }
     .choice-bar {
         left: 300px !important;
@@ -200,8 +210,10 @@ margin-bottom: 25px !important;
         margin-left: -600px !important;
     }
     .modal-content {
-        top: 7% !important; 
-        margin-top: -6% !important;
+        top: 60px !important; 
+    }
+    .modal-bg {
+      height: 3500px !important;
     }
     .choice-bar {
         left: 300px !important;
@@ -238,7 +250,7 @@ margin-bottom: 25px !important;
     width: fit-content !important;
   }
   .modal-content {
-    top: 7% !important; 
+    top: 70px !important; 
 }
 .choice-bar {
     left: 100px !important;

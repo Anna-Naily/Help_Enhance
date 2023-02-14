@@ -3,28 +3,25 @@
     <div class="inner-footer container">
       <div class="inner-footer__item">
         <p class="inner-footer__item-heading">Контакты</p>
-        <span class="inner-footer__item-span">
-          <a href="https://t.me/Alex_Sake4" class="follow-links">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
-              <path
-                fill-rule="evenodd"
-                d="m12.59 16.594-2.593 2.423s-.203.157-.425.059l.497-4.5.017.013.01-.092s7.272-6.697 7.57-6.982c.298-.285.198-.346.198-.346.02-.346-.536 0-.536 0l-9.636 6.27-4.013-1.384s-.616-.224-.676-.713c-.06-.488.696-.753.696-.753l15.953-6.412s1.312-.59 1.312.387L18.123 19.24s-.398 1.018-1.49.53l-4.043-3.176z"
-              />
-            </svg>
-          </a>
-          <p>&ensp;- По всем вопросам</p>
-        </span>
-        <span class="inner-footer__item-span">
-          <a href="https://t.me/MsNaily" class="follow-links">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
-              <path
-                fill-rule="evenodd"
-                d="m12.59 16.594-2.593 2.423s-.203.157-.425.059l.497-4.5.017.013.01-.092s7.272-6.697 7.57-6.982c.298-.285.198-.346.198-.346.02-.346-.536 0-.536 0l-9.636 6.27-4.013-1.384s-.616-.224-.676-.713c-.06-.488.696-.753.696-.753l15.953-6.412s1.312-.59 1.312.387L18.123 19.24s-.398 1.018-1.49.53l-4.043-3.176z"
-              />
-            </svg>
-          </a>
-          <p>&ensp;- Разработчик</p>
-        </span>
+        <a href="https://t.me/Alex_Sake4" class="inner-footer__item-span follow-links">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="m12.59 16.594-2.593 2.423s-.203.157-.425.059l.497-4.5.017.013.01-.092s7.272-6.697 7.57-6.982c.298-.285.198-.346.198-.346.02-.346-.536 0-.536 0l-9.636 6.27-4.013-1.384s-.616-.224-.676-.713c-.06-.488.696-.753.696-.753l15.953-6.412s1.312-.59 1.312.387L18.123 19.24s-.398 1.018-1.49.53l-4.043-3.176z"
+            />
+          </svg>
+          <p class="inner-footer__text">&ensp;- По всем вопросам</p>
+        </a>
+        <a href="https://t.me/MsNaily" class="inner-footer__item-span follow-links">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="m12.59 16.594-2.593 2.423s-.203.157-.425.059l.497-4.5.017.013.01-.092s7.272-6.697 7.57-6.982c.298-.285.198-.346.198-.346.02-.346-.536 0-.536 0l-9.636 6.27-4.013-1.384s-.616-.224-.676-.713c-.06-.488.696-.753.696-.753l15.953-6.412s1.312-.59 1.312.387L18.123 19.24s-.398 1.018-1.49.53l-4.043-3.176z"
+            />
+          </svg>
+
+          <p class="inner-footer__text">&ensp;- Разработчик</p>
+        </a>
       </div>
       <div class="inner-footer__item">
         <span class="links">
@@ -155,7 +152,7 @@ c0.6,0,1,0.4,1,1l-1.4,15.5C37.6,36.8,37.2,37.2,36.7,37.2z"
         </a>
       </div>
       <div class="inner-footer__item">
-        <a class="links-logo" href="#">
+        <a class="links-logo" href="https://www.helpenhance.ru/">
           <img class="footer-logo" src="../assets/img/FooterLogo.png" alt />
         </a>
         <a class="links-logo" href="https://www.ru.playblackdesert.com/main/index">
@@ -188,17 +185,20 @@ c0.6,0,1,0.4,1,1l-1.4,15.5C37.6,36.8,37.2,37.2,36.7,37.2z"
   padding-top: 30px;
   .inner-footer__item-heading {
     color: #666666;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     font-size: 20px;
     font-weight: 600;
   }
   .inner-footer__item-span {
     display: flex;
-    margin-bottom: 20px;
-
-    p {
+    margin-bottom: 10px;
+    .inner-footer__text {
       color: #666666;
       font-size: 14px;
+      transition: 0.2s;
+    }
+    &:hover {
+      color: #cac9c9;
     }
   }
   .links {
@@ -237,6 +237,9 @@ c0.6,0,1,0.4,1,1l-1.4,15.5C37.6,36.8,37.2,37.2,36.7,37.2z"
   font-size: 22px;
   transition: 0.2s;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
+  padding: 10px 8px;
   &:hover {
     color: #cac9c9;
   }
