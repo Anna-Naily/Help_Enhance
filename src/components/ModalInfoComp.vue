@@ -2,7 +2,7 @@
   <div>
     <input type="checkbox" id="modal" />
     <label for="modal">
-      <p class="blurp" aria-hidden="true">СПРАВКА</p>
+      <p class="modal-link" aria-hidden="true">СПРАВКА</p>
     </label>
     <label for="modal" class="modal-bg"></label>
     <div class="modal-content">
@@ -104,6 +104,9 @@ label {
   cursor: pointer;
 }
 
+.modal-link {
+  padding: 18px;
+}
 .modal-btn {
   position: relative;
   display: table-cell;
@@ -127,7 +130,7 @@ label {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 2900px;
   opacity: 0;
   z-index: 10;
   visibility: hidden;
@@ -136,12 +139,10 @@ label {
 
 .modal-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 80px;
+  left: 25%;
   width: 50%;
   height: auto;
-  margin-top: -22%;
-  margin-left: -25%;
   padding: 30px;
   background-color: white;
   border-radius: 4px;

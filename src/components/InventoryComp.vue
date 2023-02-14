@@ -41,11 +41,15 @@
             />
             <input
               disabled
-              class="form-input__element"
+              class="form-input__element form-input__element_border_none"
               maxlength="5"
               :value="getEnhanceJewelry.countFive"
             />
-            <input disabled class="form-input__element" maxlength="5" />
+            <input
+              disabled
+              class="form-input__element form-input__element_border_none"
+              maxlength="5"
+            />
           </div>
         </form>
         <form class="form-input" v-if="getPageOfInventory==2">
@@ -83,7 +87,7 @@
             />
             <input
               disabled
-              class="form-input__element"
+              class="form-input__element form-input__element_border_none"
               maxlength="5"
               :value="getEnhanceArmor.countFive"
             />
@@ -130,7 +134,7 @@
             />
             <input
               disabled
-              class="form-input__element"
+              class="form-input__element form-input__element_border_none"
               maxlength="5"
               :value="getEnhanceBlackstar.countFive"
             />
@@ -177,7 +181,7 @@
             />
             <input
               disabled
-              class="form-input__element"
+              class="form-input__element form-input__element_border_none"
               maxlength="5"
               :value="getEnhanceArmorGod.countFive"
             />
@@ -224,7 +228,7 @@
             />
             <input
               disabled
-              class="form-input__element"
+              class="form-input__element form-input__element_border_none"
               maxlength="5"
               :value="getEnhanceManos.countFive"
             />
@@ -569,13 +573,17 @@ export default {
 .form-input__element {
   width: 34px;
   padding: 2px 3px;
-  height: 10px;
-  background: none;
+  height: 15px;
+  background: #1a130f;
   color: #ffefd4;
-  border: none;
+  border: 0.5px solid #745b39;
   text-align: center;
   font-family: 'Open Sans', sans-serif !important;
-  font-size: 13px;
+  font-size: 14px;
+}
+.form-input__element_border_none {
+  border: none;
+  margin: 1px 2.5px 0px 0px;
 }
 
 .block-form {
@@ -600,7 +608,7 @@ export default {
   .arrows {
     display: flex;
     justify-content: space-around;
-    margin-top: 8px;
+    margin-top: 3px;
     width: 80px;
     .arrow-item {
       color: #ffeed5;
