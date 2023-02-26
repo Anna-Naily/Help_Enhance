@@ -59,7 +59,7 @@
             </svg>
           </a>
         </span>
-        <a href="https://www.donationalerts.com/r/sake4" class="donatAlerts">
+        <a href="https://www.donationalerts.com/r/naily" class="donatAlerts">
           <svg
             version="1.1"
             id="Logo"
