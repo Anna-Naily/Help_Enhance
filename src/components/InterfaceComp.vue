@@ -866,9 +866,13 @@ export default {
       let outputStatisticObj = {
         level: this.getEnhanceManos.level,
         result: false,
+        lostCron: 0,
+        usingCron: this.getUseCron,
       };
       switch (this.getEnhanceManos.level) {
         case 1:
+          if (this.getUseCron)
+            outputStatisticObj.lostCron = this.getEnhanceManos.countCron1;
           if (
             this.getEnhanceManos.countMagicStone >= 10 &&
             this.getEnhanceManos.countZero >= 1
@@ -888,6 +892,8 @@ export default {
           } else this.outRes();
           break;
         case 2:
+          if (this.getUseCron)
+            outputStatisticObj.lostCron = this.getEnhanceManos.countCron2;
           if (
             this.getEnhanceManos.countMagicStone >= 11 &&
             this.getEnhanceManos.countOne >= 1
@@ -907,6 +913,8 @@ export default {
           } else this.outRes();
           break;
         case 3:
+          if (this.getUseCron)
+            outputStatisticObj.lostCron = this.getEnhanceManos.countCron3;
           if (
             this.getEnhanceManos.countMagicStone >= 13 &&
             this.getEnhanceManos.countTwo >= 1
@@ -926,6 +934,8 @@ export default {
           } else this.outRes();
           break;
         case 4:
+          if (this.getUseCron)
+            outputStatisticObj.lostCron = this.getEnhanceManos.countCron4;
           if (
             this.getEnhanceManos.countMagicStone >= 16 &&
             this.getEnhanceManos.countThree >= 1
@@ -945,6 +955,8 @@ export default {
           } else this.outRes();
           break;
         case 5:
+          if (this.getUseCron)
+            outputStatisticObj.lostCron = this.getEnhanceManos.countCron5;
           if (
             this.getEnhanceManos.countMagicStone >= 20 &&
             this.getEnhanceManos.countFour >= 1
@@ -1062,11 +1074,19 @@ export default {
     },
     lockCron() {
       if (
-        (this.getTypeOfEnhance == 1 && this.getEnhanceArmor.level < 1) ||
-        (this.getTypeOfEnhance == 2 && this.getEnhanceArmor.level < 3) ||
-        (this.getTypeOfEnhance == 3 && this.getEnhanceBlackstar.level < 3) ||
-        (this.getTypeOfEnhance == 4 && this.getEnhanceArmorGod.level < 2) ||
-        this.getTypeOfEnhance == 5
+        (this.getTypeOfEnhance == 1 &&
+          (this.getEnhanceJewelry.level < 1 ||
+            this.getEnhanceJewelry.level > 5)) ||
+        (this.getTypeOfEnhance == 2 &&
+          (this.getEnhanceArmor.level < 3 || this.getEnhanceArmor.level > 5)) ||
+        (this.getTypeOfEnhance == 3 &&
+          (this.getEnhanceBlackstar.level < 3 ||
+            this.getEnhanceBlackstar.level > 5)) ||
+        (this.getTypeOfEnhance == 4 &&
+          (this.getEnhanceArmorGod.level < 2 ||
+            this.getEnhanceArmorGod.level > 5)) ||
+        (this.getTypeOfEnhance == 5 &&
+          (this.getEnhanceManos.level < 1 || this.getEnhanceManos.level > 5))
       ) {
         return true;
       } else {

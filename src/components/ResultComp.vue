@@ -433,6 +433,15 @@
                   @input="setCostMagicStone($event)"
                 />
               </span>
+              <span class="bottom-block__el-span last-child-span">
+                <img src="../assets/img/cron.png" alt class="bottom-block__img material-img" />
+                <input
+                  class="bottom-block__input"
+                  type="text"
+                  :value="getPriceCron"
+                  @input="setCostCron($event)"
+                />
+              </span>
             </div>
           </div>
         </div>
@@ -750,12 +759,13 @@ export default {
       result.profit = result.receipt - result.cost;
       return result;
     },
-    calculateManosType(enhanceObj, resultObj) {
+    calculateManosType(enhanceObj, resultObj, statisticsObj) {
       let result = { cost: 0, receipt: 0, profit: 0 };
       let startCost = 0;
       let addedCost = 0;
-
+      let materials = 0;
       let receiptCost = 0;
+
       startCost =
         enhanceObj.startCountZero * resultObj.priceItem0 +
         enhanceObj.startCountOne * resultObj.priceItem1 +
@@ -773,7 +783,9 @@ export default {
         this.equateValue(enhanceObj.addedCountMagicStone) *
           resultObj.priceMagicStone;
 
-      result.cost = startCost + addedCost;
+      materials = this.getPriceCron * statisticsObj.countLostCron;
+
+      result.cost = startCost + addedCost + materials;
       receiptCost =
         enhanceObj.countZero * resultObj.priceItem0 +
         enhanceObj.countOne * resultObj.priceItem1 +
@@ -840,7 +852,11 @@ export default {
         case 5:
           if (this.getEnhanceManos.readyCalculate) {
             this.setResult(
-              this.calculateManosType(this.getEnhanceManos, this.getResultManos)
+              this.calculateManosType(
+                this.getEnhanceManos,
+                this.getResultManos,
+                this.getStatisticalDataManos
+              )
             );
           }
           break;

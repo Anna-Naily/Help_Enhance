@@ -396,10 +396,8 @@
           <span class="statistic-box__text">Кроны: {{getStatisticalDataArmorGod.countLostCron}}</span>
         </div>
         <div class="statistic-box__item-bottom-text" v-if="getTypeOfEnhance==5">
-          <span
-            class="statistic-box__text"
-            v-if="getTypeOfEnhance==5"
-          >Камни: {{getStatisticalDataManos.countLostStone}}</span>
+          <span class="statistic-box__text">Камни: {{getStatisticalDataManos.countLostStone}}</span>
+          <span class="statistic-box__text">Кроны: {{getStatisticalDataManos.countLostCron}}</span>
         </div>
       </div>
     </div>
