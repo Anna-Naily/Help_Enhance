@@ -319,26 +319,27 @@ const getDefaultState = () => {
       startCountMagicStone: 1000,
       currentChanceGeneral: 0, // Общий текущий шанс усиления
       currentFailstackGeneral: 0, // Общий фейлстак
+      chanceLevelDown: 0.4, // Шанс понижения уровня с кронами
       // +16
       startChanceto1: 0.75, // Начальный шанс усиления на 1
       currentChanceto1: 0, // Текущий шанс усиления на 1
-      countCron1: 10,
+      countCron1: 25,
       // +17
       startChanceto2: 0.4, // Начальный шанс усиления на 1
       currentChanceto2: 0, // Текущий шанс усиления на 1
-      countCron2: 20,
+      countCron2: 80,
       // +18
       startChanceto3: 0.3, // Начальный шанс усиления на 1
       currentChanceto3: 0, // Текущий шанс усиления на 1
-      countCron3: 30,
+      countCron3: 275,
       // +19
       startChanceto4: 0.15, // Начальный шанс усиления на 1
       currentChanceto4: 0, // Текущий шанс усиления на 1
-      countCron4: 40,
+      countCron4: 1100,
       // +20
       startChanceto5: 0.06, // Начальный шанс усиления на 1
       currentChanceto5: 0, // Текущий шанс усиления на 1
-      countCron5: 50
+      countCron5: 2200
     },
     typeOfEnhance: 1, //1- усиление бижутерии, 2-усиление брони, 3- черной звезды (бс), 4- доспех бога, 5- манос
     pageOfInventory: 1, //1- усиление бижутерии, 2-усиление брони, 3- черной звезды (бс), 4- доспех бога, 5- манос
@@ -1004,6 +1005,7 @@ const mutations = {
     }
   },
   // Bar
+  //переключает типы усиливаемых вещей вперед
   nextTypeOfEnhance() {
     if (state.typeOfEnhance < 5) {
       state.typeOfEnhance++;
@@ -1015,6 +1017,7 @@ const mutations = {
       state.pageOfInventory = state.typeOfEnhance;
     }
   },
+  //переключает типы усиливаемых вещей назад
   backTypeOfEnhance() {
     if (state.typeOfEnhance > 1) {
       state.typeOfEnhance--;
@@ -1026,9 +1029,11 @@ const mutations = {
       state.pageOfInventory = state.typeOfEnhance;
     }
   },
+  //переключает инвентарь на тип вперед
   nextPageOfInventory() {
     if (state.pageOfInventory < 5) state.pageOfInventory++;
   },
+  //переключает инвентарь на тип назад
   backPageOfInventory() {
     if (state.pageOfInventory > 1) state.pageOfInventory--;
   },
@@ -1082,8 +1087,11 @@ const mutations = {
         state.enhanceArmorGod.countMagicStone--;
         break;
       case 5:
-        state.enhanceManos.countZero--;
+        if (!state.useCron) state.enhanceManos.countZero--;
         state.enhanceManos.countMagicStone -= 10;
+
+        if (state.streamingEnhance == false && state.useCron == false)
+          state.enhanceManos.level = 0;
         break;
       default:
         break;
@@ -1177,9 +1185,21 @@ const mutations = {
           state.enhanceArmorGod.level--;
         break;
       case 5:
-        state.enhanceManos.countOne--;
+        if (state.useCron) {
+          if (Math.random() <= state.enhanceManos.chanceLevelDown) {
+            state.levelDown = true;
+            state.enhanceManos.countZero++;
+            state.enhanceManos.countOne--;
+          }
+        } else {
+          state.enhanceManos.countOne--;
+        }
         state.enhanceManos.countMagicStone -= 11;
-        if (state.streamingEnhance == false) state.enhanceManos.level = 0;
+        if (state.streamingEnhance == false && state.useCron == false)
+          state.enhanceManos.level = 0;
+        else if (state.streamingEnhance == false && state.levelDown == true)
+          state.enhanceManos.level--;
+        state.levelDown = false;
         break;
       default:
         break;
@@ -1284,9 +1304,21 @@ const mutations = {
           state.enhanceArmorGod.level--;
         break;
       case 5:
-        state.enhanceManos.countTwo--;
+        if (state.useCron) {
+          if (Math.random() <= state.enhanceManos.chanceLevelDown) {
+            state.levelDown = true;
+            state.enhanceManos.countOne++;
+            state.enhanceManos.countTwo--;
+          }
+        } else {
+          state.enhanceManos.countTwo--;
+        }
         state.enhanceManos.countMagicStone -= 13;
-        if (state.streamingEnhance == false) state.enhanceManos.level = 0;
+        if (state.streamingEnhance == false && state.useCron == false)
+          state.enhanceManos.level = 0;
+        else if (state.streamingEnhance == false && state.levelDown == true)
+          state.enhanceManos.level--;
+        state.levelDown = false;
         break;
       default:
         break;
@@ -1392,9 +1424,21 @@ const mutations = {
           state.enhanceArmorGod.level--;
         break;
       case 5:
-        state.enhanceManos.countThree--;
+        if (state.useCron) {
+          if (Math.random() <= state.enhanceManos.chanceLevelDown) {
+            state.levelDown = true;
+            state.enhanceManos.countTwo++;
+            state.enhanceManos.countThree--;
+          }
+        } else {
+          state.enhanceManos.countThree--;
+        }
         state.enhanceManos.countMagicStone -= 16;
-        if (state.streamingEnhance == false) state.enhanceManos.level = 0;
+        if (state.streamingEnhance == false && state.useCron == false)
+          state.enhanceManos.level = 0;
+        else if (state.streamingEnhance == false && state.levelDown == true)
+          state.enhanceManos.level--;
+        state.levelDown = false;
         break;
       default:
         break;
@@ -1500,9 +1544,22 @@ const mutations = {
           state.enhanceArmorGod.level--;
         break;
       case 5:
-        state.enhanceManos.countFour--;
+        if (state.useCron) {
+          if (Math.random() <= state.enhanceManos.chanceLevelDown) {
+            state.levelDown = true;
+            state.enhanceManos.countThree++;
+            state.enhanceManos.countFour--;
+          }
+        } else {
+          state.enhanceManos.countFour--;
+        }
         state.enhanceManos.countMagicStone -= 20;
-        if (state.streamingEnhance == false) state.enhanceManos.level = 0;
+        if (state.streamingEnhance == false && state.useCron == false)
+          state.enhanceManos.level = 0;
+        else if (state.streamingEnhance == false && state.levelDown == true) {
+          state.enhanceManos.level--;
+        }
+        state.levelDown = false;
         break;
       default:
         break;
@@ -1788,6 +1845,7 @@ const mutations = {
         break;
     }
   },
+  // ввод количества итемов в инвентаре
   setCountInputJewelry(state, obj) {
     if (obj.value == '') obj.value = 0;
     switch (obj.level) {
@@ -2095,6 +2153,8 @@ const mutations = {
     }
     state.enhanceManos.countMagicStone = value;
   },
+
+  //ручной водж количества фейлов
   setInputGeneralFailstack(state, value) {
     switch (state.typeOfEnhance) {
       case 1:
@@ -2219,6 +2279,8 @@ const mutations = {
         break;
     }
   },
+
+  //ручной ввод количества крон
   setCountCron(state, value) {
     switch (state.typeOfEnhance) {
       case 1:

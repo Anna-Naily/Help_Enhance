@@ -96,7 +96,8 @@ const getDefaultState = () => {
       countSuccessTo5: 0,
       countTryTo5: 0,
       finalChanceTo5: 0,
-      countLostStone: 0
+      countLostStone: 0,
+      countLostCron: 0
     }
   };
 };
@@ -383,6 +384,7 @@ const mutations = {
     }
   },
   countStatisticManos(state, inputObj) {
+    state.statisticalDataManos.countLostCron += inputObj.lostCron;
     switch (inputObj.level) {
       case 1:
         if (inputObj.result) state.statisticalDataManos.countSuccessTo1++;
