@@ -34,7 +34,7 @@ const getDefaultState = () => {
       currentChanceto1: 0, // Текущий шанс усиления на 1
       thresholdFailstackto1: 18,
       maxChanceto1: 0.9,
-      countCron1: 47,
+      countCron1: 95,
       // +2
       startChanceto2: 0.1,
       deltaChanceto2: 0.01,
@@ -44,7 +44,7 @@ const getDefaultState = () => {
       currentChanceto2: 0,
       thresholdFailstackto2: 40,
       maxChanceto2: 0.7,
-      countCron2: 142,
+      countCron2: 288,
       // +3
       startChanceto3: 0.075,
       deltaChanceto3: 0.0075,
@@ -54,7 +54,7 @@ const getDefaultState = () => {
       currentChanceto3: 0,
       thresholdFailstackto3: 44,
       maxChanceto3: 0.5,
-      countCron3: 427,
+      countCron3: 865,
       // +4
       startChanceto4: 0.025,
       deltaChanceto4: 0.0025,
@@ -64,7 +64,7 @@ const getDefaultState = () => {
       currentChanceto4: 0,
       thresholdFailstackto4: 110,
       maxChanceto4: 0.4,
-      countCron4: 1187,
+      countCron4: 2405,
       // +5
       startChanceto5: 0.005,
       deltaChanceto5: 0.0005,
@@ -72,7 +72,7 @@ const getDefaultState = () => {
       currentFailstackto5: 190,
       currentChanceto5: 0,
       maxChanceto5: 0.3,
-      countCron5: 5699
+      countCron5: 11548
     },
     enhanceArmor: {
       readyCalculate: false,
